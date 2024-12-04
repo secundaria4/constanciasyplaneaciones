@@ -1,0 +1,1538 @@
+/* ----------- ESTILOS GENERALES ----------- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* ----------- ESTILOS DEL LOGIN ----------- */
+/* Estilos generales para el cuerpo */
+/* General */
+.general-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #171717;
+    color: #fff;
+}
+
+#login-container {
+    width: 90%;
+    max-width: 750px;
+    padding: 2rem;
+    background-color: #444;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Logo */
+.logo-container img {
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Títulos */
+#main-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #fff;
+}
+
+/* Formulario */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #ddd;
+}
+
+/* Campos de entrada */
+.form-input {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #777;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-input:focus {
+    border-color: #4caf50;
+}
+
+/* Botón del formulario */
+.form-button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #388e3c;
+}
+
+/* Campo de contraseña con botón integrado */
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper .form-input {
+    padding-right: 3rem; /* Espacio para el botón */
+}
+
+.input-wrapper .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #222; /* Igual al fondo del input */
+    border: none;
+    color: #aaa;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.input-wrapper .toggle-password:hover {
+    color: #fff;
+}
+
+/* Mensaje de error */
+#error-message {
+    font-size: 0.9rem;
+    color: #f44336;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+
+
+
+
+/* ----------- BARRA DE NAVEGACIÓN ----------- */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu-toggle {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: none; /* Se mostrará solo en dispositivos pequeños */
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu.active {
+    display: block; /* Mostrar el menú cuando esté activo */
+    
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+    color: #FFC107;
+}
+
+.logout-link {
+    text-decoration: none;
+    color: #f44336;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.logout-link:hover {
+    color: #d32f2f;
+}
+
+/* Estilo para el perfil del usuario */
+.user-profile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.user-name {
+    font-weight: bold;
+    margin-right: 10px;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.user-name:hover {
+    color: #FFC107; /* Verde al pasar el mouse */
+}
+
+.user-name.active {
+    color: #fff;
+    background-color: #FFC107; /* Fondo verde al estar activo */
+    border-color: #FFC107;
+}
+
+/* Estilo para el menú desplegable */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 1000;
+}
+
+.dropdown-menu.active {
+    display: flex; /* Mostrar cuando está activo */
+}
+
+.dropdown-menu p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Estilo para el botón de cerrar sesión */
+.logout-link {
+    text-decoration: none;
+    color: #f44336; /* Rojo */
+    background-color: transparent;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid #f44336;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logout-link:hover {
+    color: #fff; /* Blanco */
+    background-color: #f44336; /* Fondo rojo */
+}
+
+/* Logo en la barra de navegación */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo {
+    height: 80px; /* Ajusta el tamaño del logo */
+    width: auto;
+    margin-right: 10px; /* Espacio entre el logo y el texto si es necesario */
+}
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostrar en pantallas pequeñas */
+    }
+
+    .navbar-menu {
+        display: none; /* Ocultar por defecto */
+        flex-direction: column;
+        gap: 0;
+        background-color: #333;
+        padding: 1rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+
+    .navbar-menu.active {
+        display: flex; /* Mostrar menú desplegable */
+    }
+
+    .navbar-link {
+        padding: 0.5rem 0;
+    }
+}
+
+
+/* ----------- ESTILOS PARA LA PÁGINA DE INICIO ----------- */
+#access-container {
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 800px;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.privilege-info {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+#privilege {
+    font-weight: bold;
+    color: #4caf50;
+}
+
+.privileges-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.privileges-table th,
+.privileges-table td {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.privileges-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.privileges-table td a {
+    text-decoration: none;
+    color: #4caf50;
+    font-size: 1rem;
+    transition: all 0.3s ease; /* Transición suave para los cambios */
+}
+
+.privileges-table td a:hover {
+    color: #388e3c; /* Cambia el color al pasar el cursor */
+    font-size: 1.1rem; /* Aumenta ligeramente el tamaño de la fuente */
+}
+
+/* ----------- DISEÑO RESPONSIVO ----------- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        gap: 0.5rem;
+        background-color: #333;
+        padding: 1rem;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .privileges-table {
+        width: 100%;
+    }
+}
+/* ----------- ESTILOS DE REGISTRO ----------- */
+
+/* Contenedor de la tabla que centrará todo el formulario */
+#registro-form-container {
+    width: 60%; /* Ancho de la tabla */
+    margin: 50px auto; /* Centrado horizontal */
+    border: 1px solid #cccccc; /* Borde de la tabla */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Estilo de las celdas dentro de la tabla */
+#registro-form-container td {
+    padding: 10px;
+    vertical-align: top;
+    text-align: left;
+}
+
+/* Estilo para la fila de título */
+#registro-form-title {
+    text-align: center;
+    font-size: 2em;
+    color: #333333;
+    font-weight: bold;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #cccccc;
+    width: 100%;
+}
+
+/* Centrado del formulario en la tabla */
+#registro-form-content {
+    text-align: center;
+}
+
+/* Estilo para las etiquetas de los campos */
+.registro-form-label {
+    font-weight: bold;
+}
+
+/* Estilo para los inputs y selects */
+.registro-form-input, .registro-form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Estilo de los radio buttons */
+.registro-form-radio {
+    width: auto;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* Estilo del botón */
+.registro-form-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.registro-form-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo de los enlaces de la navbar */
+.registro-navbar-link {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.registro-navbar-link:hover {
+    text-decoration: underline;
+}
+
+/* Estilo de los inputs requeridos */
+input[required], select[required] {
+    border: 1px solid black;
+}
+
+/* Estilo de las filas de la tabla */
+#registro-form-container tr {
+    border-bottom: 1px solid #cccccc;
+}
+
+/* Estilo para los campos con ancho auto */
+.registro-form-input[maxlength] {
+    width: auto;
+}
+/* ----------- ESTILOS DE REGISTRAR USUARIO ----------- */
+
+/* Contenedor principal centrado */
+.user-form-container {
+    width: 27%; /* Ancho ajustado del formulario */
+    margin: 100px auto; /* Centrado vertical y horizontal */
+    padding: 30px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el título principal del formulario */
+.user-form-title {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el formulario */
+.user-form {
+    width: 100%;
+    display: block;
+    text-align: left;
+}
+
+/* Estilo de las etiquetas del formulario */
+.user-form-label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+/* Estilo para los campos de entrada */
+.user-input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* Estilo para los botones */
+.user-submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.user-submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para los enlaces de la barra de navegación */
+.user-navbar-link {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.user-navbar-link:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para los inputs requeridos */
+input[required] {
+    border: 1px solid #444;
+}
+
+/* Estilo para los campos de formulario con un ancho auto */
+.user-input-field[maxlength] {
+    width: auto;
+}
+
+/* Estilo de la barra de navegación */
+.user-navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.user-navbar .user-menu-toggle {
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.user-navbar .user-navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.user-navbar .user-navbar-menu li {
+    margin: 0 10px;
+}
+
+.user-navbar .user-navbar-menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.user-navbar .user-navbar-menu li a:hover {
+    text-decoration: underline;
+}
+
+.user-logout-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    border-radius: 5px;
+}
+
+.user-logout-link:hover {
+    background-color: #c0392b;
+}
+/* ----------- ESTILOS TABLA2 Y TABLA3----------- */
+/* Contenedor principal */
+.tabla2-container {
+    width: 80%; /* Ajustar el ancho */
+    margin: 50px auto; /* Centrado horizontal */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal */
+.tabla2-title {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Botón "Añadir Empleado" */
+.tabla2-add-link {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.tabla2-add-link:hover {
+    background-color: #218838;
+}
+
+/* Tabla */
+.tabla2-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tabla2-table th, .tabla2-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.tabla2-table th {
+    background-color: #007bff;
+    color: white;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+.tabla2-table td {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.tabla2-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tabla2-table tbody tr:hover {
+    background-color: #e2e6ea;
+    cursor: pointer;
+}
+
+/* Acciones de la tabla */
+.tabla2-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tabla2-actions a, .tabla2-actions button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    font-size: 1.2em;
+}
+
+.tabla2-actions a i, .tabla2-actions button i {
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.tabla2-actions a:hover i, .tabla2-actions button:hover i {
+    color: #0056b3;
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+    color: white;
+}
+
+.navbar .menu-toggle {
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.navbar .navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar .navbar-menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.navbar .navbar-menu li a:hover {
+    color: #ffc107;
+}
+
+/* Botón de cerrar sesión */
+.logout-link {
+    color: white;
+    background-color: #e74c3c;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.logout-link:hover {
+    background-color: #c0392b;
+}
+/* Ruta del sistema */
+.ruta-sistema {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Barra de búsqueda y botones de orden */
+.orden-buttons {
+    display: inline-block;
+    margin-left: 15px;
+    vertical-align: middle;
+}
+
+.orden-button {
+    padding: 8px 15px;
+    font-size: 1em;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.orden-button:hover {
+    background-color: #0056b3;
+}
+
+.orden-button.active {
+    background-color: #28a745;
+}
+
+.orden-button.asc {
+    background-color: #007bff;
+}
+
+.orden-button.desc {
+    background-color: #dc3545;
+}
+
+
+
+/* ----------- VER EMPLEADO ----------- */
+
+/* Contenedor principal */
+.ver-container {
+    width: 30%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado */
+.ver-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ver-title {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.ver-job-title {
+    font-size: 1.2em;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Secciones de Información */
+.ver-sections {
+    margin-top: 20px;
+}
+
+.ver-section {
+    margin-bottom: 20px;
+}
+
+.ver-section-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+.ver-details p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.ver-label {
+    font-weight: bold;
+    color: #555;
+}
+
+.ver-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.ver-link:hover {
+    text-decoration: underline;
+}
+
+/* Botones */
+.ver-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.ver-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.ver-button-back {
+    background-color: #007bff;
+}
+
+.ver-button-back:hover {
+    background-color: #0056b3;
+}
+
+.ver-button-edit {
+    background-color: #28a745;
+}
+
+.ver-button-edit:hover {
+    background-color: #218838;
+}
+
+/* Mensaje de error */
+.ver-error {
+    text-align: center;
+    color: #e74c3c;
+}
+/* ----------- DISEÑO CONSTANCIAS ----------- */
+
+/* ----------- BARRA DE BUSQUEDA -----------*/
+
+/* Contenedor general del botón y la barra de búsqueda */
+.tabla2-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaciado entre el botón y la barra */
+    margin-bottom: 1rem;
+}
+
+/* Botón de añadir empleado */
+.tabla2-add-link {
+    padding: 0.5rem 1rem;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.tabla2-add-link:hover {
+    background-color: #388e3c;
+}
+
+/* Barra de búsqueda */
+.busqueda-form {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espaciado entre la barra de búsqueda y el botón de enviar */
+}
+
+.busqueda-input {
+    width: 250px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.busqueda-input:focus {
+    border-color: #4caf50;
+    outline: none;
+}
+
+.busqueda-button {
+    padding: 0.5rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.busqueda-button:hover {
+    background-color: #388e3c;
+}
+
+.busqueda-button i {
+    font-size: 1rem;
+}
+/* ----------- ESTILOS SUBIR PLANEACION -----------*/
+/* Contenedor principal */
+.plan-container {
+    width: 40%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado */
+.plan-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.plan-title {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Tabla */
+.plan-table {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.plan-table td {
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+.plan-table input[type="file"] {
+    width: 100%;
+}
+
+/* Botones */
+.plan-button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    margin: 5px;
+    background-color: #4caf50;
+    border: none;
+    cursor: pointer;
+}
+
+.plan-button:hover {
+    background-color: #388e3c;
+}
+
+.plan-reset {
+    background-color: #e74c3c;
+}
+
+.plan-reset:hover {
+    background-color: #c0392b;
+}
+
+/* Enlace */
+.plan-link {
+    color: #4caf50;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.plan-link:hover {
+    text-decoration: underline;
+    color: #388e3c;
+}
+/* ----------- ESTILOS VER PLANEACION -----------*/
+/* Contenedor principal */
+.verplan-container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado */
+.verplan-title {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Tabla */
+.verplan-table-container {
+    overflow-x: auto;
+}
+
+.verplan-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 1em;
+}
+
+.verplan-header-row th {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.verplan-row td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.verplan-row:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Enlaces */
+.verplan-link, .verplan-action-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.verplan-link:hover, .verplan-action-link:hover {
+    text-decoration: underline;
+}
+
+/* Botones */
+.verplan-button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    cursor: pointer;
+}
+
+.verplan-button:hover {
+    background-color: #218838;
+}
+/* ----------- ESTILOS GESTION USER ----------- */
+.gesuser {
+    width: 60%; /* Ajustar el ancho */
+    margin: 50px auto; /* Centrado horizontal */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gesuser h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.gesuser a {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.gesuser a:hover {
+    background-color: #218838;
+}
+
+.gesuser table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.gesuser th, .gesuser td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.gesuser th {
+    background-color: #007bff;
+    color: white;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+.gesuser td {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.gesuser tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.gesuser tbody tr:hover {
+    background-color: #e2e6ea;
+    cursor: pointer;
+}
+
+.gesuser .tabla2-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gesuser .tabla2-actions a, .gesuser .tabla2-actions button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    font-size: 1.2em;
+}
+
+.gesuser .tabla2-actions a i, .gesuser .tabla2-actions button i {
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.gesuser .tabla2-actions a:hover i, .gesuser .tabla2-actions button:hover i {
+    color: #0056b3;
+}
+.gesuser .d-button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 14.5px 28px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.gesuser .d-button:hover {
+    background-color: #c0392b;
+}
+/* ----------- ESTILOS MOD USER ----------- */
+/* Contenedor principal centrado */
+.moduser {
+    width: 27%; /* Ancho ajustado del formulario */
+    margin: 100px auto; /* Centrado vertical y horizontal */
+    padding: 30px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el título principal del formulario */
+.user-form-title {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el formulario */
+.user-form {
+    width: 100%;
+    display: block;
+    text-align: left;
+}
+
+/* Estilo de las etiquetas del formulario */
+.user-form-label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+/* Estilo para los campos de entrada */
+.user-input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* Estilo para los botones */
+.user-submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.user-submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para los enlaces de la barra de navegación */
+.user-navbar-link {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.user-navbar-link:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para los inputs requeridos */
+input[required] {
+    border: 1px solid #444;
+}
+
+/* Estilo para los campos de formulario con un ancho auto */
+.user-input-field[maxlength] {
+    width: auto;
+}
+
+/* Estilo de la barra de navegación */
+.user-navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.user-navbar .user-menu-toggle {
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.user-navbar .user-navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.user-navbar .user-navbar-menu li {
+    margin: 0 10px;
+}
+
+.user-navbar .user-navbar-menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.user-navbar .user-navbar-menu li a:hover {
+    text-decoration: underline;
+}
+
+.user-logout-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    border-radius: 5px;
+}
+
+.user-logout-link:hover {
+    background-color: #c0392b;
+}
+/* ----------- BOTON CANCELAR ROJO ----------- */
+.r {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.r:hover {
+    background-color: darkred;
+}
+
+.ro {
+    width: 100%;
+    padding: 12px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.ro:hover {
+    background-color: darkred;
+}
+
+
+/* ----------- MAYUSCULAS ----------- */
+/* Clase para convertir texto a mayúsculas */
+.texto-mayusculas {
+    text-transform: uppercase;
+}
+
+
+/* ----------- RUTAS ----------- */
+
+.breadcrumb {
+    background-color: #f8f9fa; /* Fondo suave */
+    padding: 10px 15px; /* Espaciado interno */
+    margin: 15px 0; /* Separación vertical */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño de letra */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.breadcrumb ul {
+    list-style: none; /* Sin viñetas */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Alinear elementos horizontalmente */
+    gap: 8px; /* Espaciado entre elementos */
+}
+
+.breadcrumb li {
+    display: inline; /* Evitar saltos de línea */
+}
+
+.breadcrumb a {
+    text-decoration: none; /* Quitar subrayado */
+    color: #007bff; /* Azul para enlaces */
+    font-weight: 500; /* Peso de texto medio */
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline; /* Subrayar al pasar el mouse */
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: " /"; /* Agregar el separador */
+    color: #6c757d; /* Gris para el separador */
+}
+
+.breadcrumb li:last-child {
+    color: #6c757d; /* Gris para la ubicación actual */
+    pointer-events: none; /* No clickeable */
+}
+/* ----------- ESTILOS CONSTANCIAS -----------*/
+.constancias {
+    width: 50%;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #eef2f3;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+}
+
+.constancias-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.constancias-title {
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.constancias-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #34495e;
+}
+
+.constancias-form select,
+.constancias-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.constancias-form select:focus,
+.constancias-form input[type="submit"]:focus {
+    outline: none;
+    border-color: #4caf50;
+}
+
+.constancias-form input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.constancias-form input[type="submit"]:hover {
+    background-color: #388e3c;
+}
+
+.constancias-link {
+    color: #4caf50;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.constancias-link:hover {
+    text-decoration: underline;
+    color: #388e3c;
+}
